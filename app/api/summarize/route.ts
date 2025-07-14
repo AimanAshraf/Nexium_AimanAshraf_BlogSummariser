@@ -7,7 +7,7 @@ function cleanText(html: string): string {
   const $ = cheerio.load(html);
   $('nav, header, footer, script, style, noscript, iframe, form, aside, svg').remove();
 
-  const candidates = ['article', main', '[role=main]', 'section', 'div'];
+const candidates = ['article', 'main', '[role=main]', 'section', 'div'];
   for (const selector of candidates) {
     const content = $(selector).text().trim();
     if (content.length > 500) return content;
