@@ -1,4 +1,4 @@
-const translate = (await import('@vitalets/google-translate-api')).translate;
+/*const translate = (await import('@vitalets/google-translate-api')).translate;
 
 export async function translateToUrdu(text: string): Promise<string> {
   try {
@@ -8,4 +8,16 @@ export async function translateToUrdu(text: string): Promise<string> {
     console.error('Translation error:', error);
     return text;
   }
+}*/
+
+export async function translateToUrdu(text: string): Promise<string> {
+  try {
+    const { default: translate } = await import('@vitalets/google-translate-api');
+    const result = await translate(text, { to: 'ur' });
+    return result.text;
+  } catch (error) {
+    console.error('Translation error:', error);
+    return text;
+  }
 }
+
