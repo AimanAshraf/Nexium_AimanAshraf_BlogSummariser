@@ -10,9 +10,10 @@ export async function translateToUrdu(text: string): Promise<string> {
   }
 }*/
 
+import translate from '@vitalets/google-translate-api';
+
 export async function translateToUrdu(text: string): Promise<string> {
   try {
-    const { default: translate } = await import('@vitalets/google-translate-api');
     const result = await translate(text, { to: 'ur' });
     return result.text;
   } catch (error) {
