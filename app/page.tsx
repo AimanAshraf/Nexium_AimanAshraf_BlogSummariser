@@ -115,7 +115,7 @@ export default function Home() {
           onClick: () => document.getElementById('results')?.scrollIntoView()
         }
       });
-    } catch {
+    } catch (err) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast.error('Failed to summarize the article', {
         description: 'Please try again or check the URL'
@@ -140,7 +140,7 @@ export default function Home() {
         text: `Read this summary: ${result?.title || 'Article summary'}`,
         url: window.location.href,
       });
-    } catch {
+    } catch (err) {
       toast.info('Sharing not supported, copied link instead', {
         position: 'top-center',
       });
