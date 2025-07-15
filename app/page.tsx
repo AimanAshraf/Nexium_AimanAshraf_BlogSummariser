@@ -559,12 +559,12 @@ export default function Home() {
                       {expandedSummary ? (
                         <>
                           <ChevronUp size={16} className="mr-1" />
-                          Show Less
+                          Show More
                         </>
                       ) : (
                         <>
                           <ChevronDown size={16} className="mr-1" />
-                          Show More
+                          Show Less
                         </>
                       )}
                     </button>
@@ -615,12 +615,12 @@ export default function Home() {
                       {expandedSummary ? (
                         <>
                           <ChevronUp size={16} className="mr-1" />
-                          Show Less
+                          Show More
                         </>
                       ) : (
                         <>
                           <ChevronDown size={16} className="mr-1" />
-                          Show More
+                          Show Less
                         </>
                       )}
                     </button>
