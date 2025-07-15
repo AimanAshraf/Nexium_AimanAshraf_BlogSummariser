@@ -7,7 +7,6 @@ import { useCopyToClipboard } from 'react-use';
 import { toast } from 'sonner';
 import TextareaAutosize from 'react-textarea-autosize';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-
 export default function Home() {
   const [url, setUrl] = useState('');
   const [result, setResult] = useState<{
@@ -39,7 +38,6 @@ export default function Home() {
     "Understand articles faster..."
   ];
 
-  // Typing animation effect
   useEffect(() => {
     const currentText = sampleTexts[typingIndex];
     let charIndex = 0;
@@ -62,7 +60,6 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [typingIndex]);
 
-  // Floating bubbles background effect
   useEffect(() => {
     const interval = setInterval(() => {
       controls.start({
