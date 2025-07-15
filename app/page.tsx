@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -136,7 +135,7 @@ export default function Home() {
     try {
       await navigator.share({
         title: 'Check out this article summary',
-        text: Read this summary: ${result?.title || 'Article summary'},
+        text: `Read this summary: ${result?.title || 'Article summary'}`,
         url: window.location.href,
       });
     } catch (err) {
@@ -157,14 +156,14 @@ export default function Home() {
       {[...Array(12)].map((_, i) => (
         <motion.div
           key={i}
-          className={absolute rounded-full opacity-20 z-[-1] ${
+          className={`absolute rounded-full opacity-20 z-[-1] ${
             i % 3 === 0 ? 'bg-purple-300' : i % 3 === 1 ? 'bg-blue-300' : 'bg-pink-300'
-          }}
+          }`}
           style={{
             width: Math.random() * 100 + 50,
             height: Math.random() * 100 + 50,
-            left: ${Math.random() * 100}%,
-            top: ${Math.random() * 100}%,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
           }}
           animate={{
             y: [0, (Math.random() - 0.5) * 100],
@@ -196,8 +195,8 @@ export default function Home() {
             style={{
               width: Math.random() * 10 + 2,
               height: Math.random() * 10 + 2,
-              left: ${Math.random() * 100}%,
-              top: ${Math.random() * 100}%,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
             }}
             animate={{
               y: [0, (Math.random() - 0.5) * 100],
@@ -262,9 +261,9 @@ export default function Home() {
          <div className="relative flex-1">
   <motion.label
     htmlFor="url-input"
-    className={absolute left-4 transition-all duration-200 pointer-events-none text-purple-500 ${
+    className={`absolute left-4 transition-all duration-200 pointer-events-none text-purple-500 ${
       url ? 'text-xs top-2' : 'text-sm top-4'
-    }}
+    }`}
   >
     Paste blog URL
   </motion.label>
@@ -499,7 +498,7 @@ export default function Home() {
                     className="data-[state=active]:bg-white data-[state=active]:shadow-sm py-3 rounded-lg"
                     onClick={() => setActiveTab('english')}
                   >
-                    <span className={flex items-center ${activeTab === 'english' ? 'text-purple-600' : 'text-gray-500'}}>
+                    <span className={`flex items-center ${activeTab === 'english' ? 'text-purple-600' : 'text-gray-500'}`}>
                       <Globe className="mr-2" size={16} />
                       English
                     </span>
@@ -509,7 +508,7 @@ export default function Home() {
                     className="data-[state=active]:bg-white data-[state=active]:shadow-sm py-3 rounded-lg"
                     onClick={() => setActiveTab('urdu')}
                   >
-                    <span className={flex items-center ${activeTab === 'urdu' ? 'text-purple-600' : 'text-gray-500'}}>
+                    <span className={`flex items-center ${activeTab === 'urdu' ? 'text-purple-600' : 'text-gray-500'}`}>
                       <Languages className="mr-2" size={16} />
                       اردو
                     </span>
@@ -720,11 +719,10 @@ export default function Home() {
           <span>🚀 Powered by Next.js & Tailwind CSS</span>
         </motion.div>
         <p className="max-w-md mx-auto">
+          This tool uses AI to generate concise summaries in multiple languages. 
           Results may vary based on content complexity.
         </p>
       </motion.footer>
     </div>
   );
 }
-
-
