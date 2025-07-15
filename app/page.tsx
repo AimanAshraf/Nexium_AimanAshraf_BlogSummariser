@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -7,6 +9,7 @@ import { useCopyToClipboard } from 'react-use';
 import { toast } from 'sonner';
 import TextareaAutosize from 'react-textarea-autosize';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+
 export default function Home() {
   const [url, setUrl] = useState('');
   const [result, setResult] = useState<{
@@ -38,6 +41,7 @@ export default function Home() {
     "Understand articles faster..."
   ];
 
+  // Typing animation effect
   useEffect(() => {
     const currentText = sampleTexts[typingIndex];
     let charIndex = 0;
@@ -60,6 +64,7 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [typingIndex]);
 
+  // Floating bubbles background effect
   useEffect(() => {
     const interval = setInterval(() => {
       controls.start({
@@ -716,7 +721,6 @@ export default function Home() {
           <span>🚀 Powered by Next.js & Tailwind CSS</span>
         </motion.div>
         <p className="max-w-md mx-auto">
-          This tool uses AI to generate concise summaries in multiple languages. 
           Results may vary based on content complexity.
         </p>
       </motion.footer>
